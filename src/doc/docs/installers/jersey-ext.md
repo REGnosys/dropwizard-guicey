@@ -127,7 +127,7 @@ public class DummyExceptionMapper implements ExceptionMapper<RuntimeException> {
     [dropwizard-views](https://www.dropwizard.io/en/release-2.0.x/manual/views.html#template-errors).
     
 !!! tip
-    Default exception dropwizard mappers (registered in `io.dropwizard.setup.ExceptionMapperBinder`) could be 
+    Default exception dropwizard mappers (registered in `io.dropwizard.core.setup.ExceptionMapperBinder`) could be 
     [overridden](https://www.dropwizard.io/en/release-2.0.x/manual/core.html#overriding-default-exception-mappers)
     (see [priority section](#priority))
     or completely disabled with `server.registerDefaultExceptionMappers` option.    

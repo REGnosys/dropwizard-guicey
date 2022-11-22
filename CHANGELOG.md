@@ -326,7 +326,7 @@ org.glassfish.jersey.server.internal.process.AsyncContext | org.glassfish.jersey
 org.glassfish.jersey.server.internal.inject.AbstractValueFactoryProvider | org.glassfish.jersey.server.internal.inject.AbstractValueParamProvider                         
 org.glassfish.jersey.server.spi.internal.ValueFactoryProvider | org.glassfish.jersey.server.spi.internal.ValueParamProvider
 org.glassfish.hk2.api.InjectionResolver | org.glassfish.jersey.internal.inject.InjectionResolver
-io.dropwizard.Bundle | io.dropwizard.ConfiguredBundle (note that interface methods are default now and may not be implemented)
+io.dropwizard.Bundle | io.dropwizard.core.ConfiguredBundle (note that interface methods are default now and may not be implemented)
 io.dropwizard.util.Size | io.dropwizard.util.DataSize 
 
 ### 4.2.2 (2018-11-26)

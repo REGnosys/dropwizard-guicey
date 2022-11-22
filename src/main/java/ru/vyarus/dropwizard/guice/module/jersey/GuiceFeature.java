@@ -2,6 +2,8 @@ package ru.vyarus.dropwizard.guice.module.jersey;
 
 import com.google.common.base.Preconditions;
 import com.google.inject.Injector;
+import javax.ws.rs.core.Feature;
+import javax.ws.rs.core.FeatureContext;
 import org.glassfish.jersey.InjectionManagerProvider;
 import org.glassfish.jersey.internal.inject.InjectionManager;
 import ru.vyarus.dropwizard.guice.module.context.stat.StatsTracker;
@@ -12,8 +14,6 @@ import ru.vyarus.dropwizard.guice.module.jersey.hk2.InstallerBinder;
 import ru.vyarus.dropwizard.guice.module.lifecycle.internal.LifecycleSupport;
 
 import javax.inject.Provider;
-import javax.ws.rs.core.Feature;
-import javax.ws.rs.core.FeatureContext;
 
 import static ru.vyarus.dropwizard.guice.module.context.stat.Stat.JerseyTime;
 

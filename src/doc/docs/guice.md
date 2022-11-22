@@ -23,9 +23,9 @@ All applied bindings are described in [the user guide](guide/guice/bindings.md).
 
 Main objects:
 
-* `io.dropwizard.setup.Bootstrap` 
-* `io.dropwizard.Configuration`
-* `io.dropwizard.setup.Environment`
+* `io.dropwizard.core.setup.Bootstrap` 
+* `io.dropwizard.core.Configuration`
+* `io.dropwizard.core.setup.Environment`
 
 Bindings below are not immediately available as HK2 context [starts after guice](guide/lifecycle.md):
 

@@ -28,7 +28,7 @@ INFO  [2018-06-18 05:55:03,532] ru.vyarus.dropwizard.guice.module.yaml.report.De
     ├── logging: DefaultLoggingFactory
     │   ├── level: String = "INFO"
     │   ├── loggers: RegularImmutableMap<String, JsonNode> = {}
-    │   └── appenders: SingletonImmutableList<AppenderFactory<ILoggingEvent>> = [io.dropwizard.logging.ConsoleAppenderFactory@1b7332a7]
+    │   └── appenders: SingletonImmutableList<AppenderFactory<ILoggingEvent>> = [io.dropwizard.logging.common.ConsoleAppenderFactory@1b7332a7]
     │   
     ├── metrics: MetricsFactory
     │   ├── frequency: Duration = 1 minute
@@ -69,7 +69,7 @@ INFO  [2018-06-18 05:55:03,532] ru.vyarus.dropwizard.guice.module.yaml.report.De
         ├── rootPath: Optional<String> = Optional.empty
         │   
         ├── requestLog: LogbackAccessRequestLogFactory
-        │   └── appenders: SingletonImmutableList<AppenderFactory<IAccessEvent>> = [io.dropwizard.logging.ConsoleAppenderFactory@58a2b4c]
+        │   └── appenders: SingletonImmutableList<AppenderFactory<IAccessEvent>> = [io.dropwizard.logging.common.ConsoleAppenderFactory@58a2b4c]
         │   
         └── gzip: GzipHandlerFactory
             ├── enabled: Boolean = true
@@ -94,7 +94,7 @@ INFO  [2018-06-18 05:55:03,532] ru.vyarus.dropwizard.guice.module.yaml.report.De
             @Config ComplexGenericCase.Sub<String> = null
 
         Configuration.logging
-            @Config LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.ConsoleAppenderFactory@1b7332a7]}
+            @Config LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.common.ConsoleAppenderFactory@1b7332a7]}
 
         Configuration.metrics
             @Config MetricsFactory = MetricsFactory{frequency=1 minute, reporters=[]}
@@ -119,8 +119,8 @@ INFO  [2018-06-18 05:55:03,532] ru.vyarus.dropwizard.guice.module.yaml.report.De
             @Config("sub.smth") String = null
 
         Configuration:
-            @Config("logging") LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.ConsoleAppenderFactory@1b7332a7]}
-            @Config("logging.appenders") List<AppenderFactory<ILoggingEvent>> (with actual type SingletonImmutableList<AppenderFactory<ILoggingEvent>>) = [io.dropwizard.logging.ConsoleAppenderFactory@1b7332a7]
+            @Config("logging") LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.common.ConsoleAppenderFactory@1b7332a7]}
+            @Config("logging.appenders") List<AppenderFactory<ILoggingEvent>> (with actual type SingletonImmutableList<AppenderFactory<ILoggingEvent>>) = [io.dropwizard.logging.common.ConsoleAppenderFactory@1b7332a7]
             @Config("logging.level") String = "INFO"
             @Config("logging.loggers") Map<String, JsonNode> (with actual type RegularImmutableMap<String, JsonNode>) = {}
             @Config("metrics") MetricsFactory = MetricsFactory{frequency=1 minute, reporters=[]}
@@ -156,7 +156,7 @@ INFO  [2018-06-18 05:55:03,532] ru.vyarus.dropwizard.guice.module.yaml.report.De
             @Config("server.nofileSoftLimit") Integer = null
             @Config("server.registerDefaultExceptionMappers") Boolean = true
             @Config("server.requestLog") RequestLogFactory<RequestLog> (with actual type LogbackAccessRequestLogFactory) = io.dropwizard.request.logging.LogbackAccessRequestLogFactory@6de30571
-            @Config("server.requestLog.appenders") List<AppenderFactory<IAccessEvent>> (with actual type SingletonImmutableList<AppenderFactory<IAccessEvent>>) = [io.dropwizard.logging.ConsoleAppenderFactory@58a2b4c]
+            @Config("server.requestLog.appenders") List<AppenderFactory<IAccessEvent>> (with actual type SingletonImmutableList<AppenderFactory<IAccessEvent>>) = [io.dropwizard.logging.common.ConsoleAppenderFactory@58a2b4c]
             @Config("server.rootPath") Optional<String> = Optional.empty
             @Config("server.serverPush") ServerPushFilterFactory = io.dropwizard.jetty.ServerPushFilterFactory@3240b2a4
             @Config("server.serverPush.associatePeriod") Duration = 4 seconds
@@ -203,7 +203,7 @@ The same for unique objects:
 
 ```
 Configuration.logging
-            @Config LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.ConsoleAppenderFactory@1b7332a7]}
+            @Config LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.common.ConsoleAppenderFactory@1b7332a7]}
 ```
 
 Means available injection:

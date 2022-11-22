@@ -2,11 +2,13 @@ package ru.vyarus.dropwizard.guice.support.provider.oauth
 
 import io.dropwizard.auth.*
 import io.dropwizard.auth.oauth.OAuthCredentialAuthFilter
-import io.dropwizard.setup.Environment
+import io.dropwizard.core.setup.Environment
+import org.checkerframework.checker.nullness.qual.Nullable
 import org.glassfish.jersey.server.filter.RolesAllowedDynamicFeature
 
 import javax.inject.Inject
 import javax.inject.Singleton
+import javax.ws.rs.container.ContainerRequestContext
 import javax.ws.rs.core.Feature
 import javax.ws.rs.core.FeatureContext
 import javax.ws.rs.ext.Provider
@@ -45,9 +47,10 @@ class OAuthDynamicFeature extends AuthDynamicFeature {
     // may be external class (internal for simplicity)
     @Singleton
     public static class OAuthAuthorizer implements Authorizer<User> {
+
         @Override
-        public boolean authorize(User user, String role) {
-            return user.getName().equals("good-guy") && role.equals("ADMIN");
+        boolean authorize(User user, String role, ContainerRequestContext requestContext) {
+            return user.getName() == "good-guy" && role == "ADMIN";
         }
     }
 

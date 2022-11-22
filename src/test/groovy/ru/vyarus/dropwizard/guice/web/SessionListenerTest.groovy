@@ -1,9 +1,9 @@
 package ru.vyarus.dropwizard.guice.web
 
-import io.dropwizard.Application
-import io.dropwizard.Configuration
-import io.dropwizard.setup.Bootstrap
-import io.dropwizard.setup.Environment
+import io.dropwizard.core.Application
+import io.dropwizard.core.Configuration
+import io.dropwizard.core.setup.Bootstrap
+import io.dropwizard.core.setup.Environment
 import org.eclipse.jetty.server.session.SessionHandler
 import org.eclipse.jetty.util.component.AbstractLifeCycle
 import org.eclipse.jetty.util.component.LifeCycle

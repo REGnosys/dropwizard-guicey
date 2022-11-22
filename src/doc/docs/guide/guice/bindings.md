@@ -3,9 +3,9 @@
 Guicey always installs `GuiceBootstrapModule` which registers the following bindings:
 
 * Dropwizard objects:
-    * `io.dropwizard.setup.Bootstrap` 
-    * `io.dropwizard.Configuration` 
-    * `io.dropwizard.setup.Environment`
+    * `io.dropwizard.core.setup.Bootstrap` 
+    * `io.dropwizard.core.Configuration` 
+    * `io.dropwizard.core.setup.Environment`
 * Detailed [configuration bindings](#configuration) (by root classes, interfaces, yaml path or unique sub type)
 * [Jersey objects](#jersey-specific-bindings) (including [request scoped](#request-and-response)) 
 * Guicey [special objects](#guicey-configuration)
@@ -18,7 +18,7 @@ Guicey always installs `GuiceBootstrapModule` which registers the following bind
 
 `Configuration` bound to guice as: 
 
-* `io.dropwizard.Configuration`
+* `io.dropwizard.core.Configuration`
 * Your configuration class (`#!java MyConfiguration extends Configuration`)
 * All classes between them
 
@@ -186,7 +186,7 @@ It is assumed that in such case value would be always present (some sort of prop
 
 ## Environment binding
 
-Dropwizard `io.dropwizard.setup.Environment` is bound to guice context.
+Dropwizard `io.dropwizard.core.setup.Environment` is bound to guice context.
 
 It is mostly useful to perform additional configurations in guice bean for features not covered with installers. 
 For example:

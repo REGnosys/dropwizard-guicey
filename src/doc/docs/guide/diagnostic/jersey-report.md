@@ -16,7 +16,7 @@ Example report:
 INFO  [2019-10-28 06:16:44,068] ru.vyarus.dropwizard.guice.debug.JerseyConfigDiagnostic: Jersey configuration = 
 
     Exception mappers
-        Throwable                      ExceptionMapperBinder$1      (io.dropwizard.setup)      
+        Throwable                      ExceptionMapperBinder$1      (io.dropwizard.core.setup)      
         EofException                   EarlyEofExceptionMapper      (i.d.jersey.errors)        
         EmptyOptionalException         EmptyOptionalExceptionMapper (i.d.jersey.optional)      
         IOException                    GuiceExceptionMapper         (r.v.d.g.c.h.support)      

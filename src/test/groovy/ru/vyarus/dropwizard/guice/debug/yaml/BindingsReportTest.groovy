@@ -1,8 +1,8 @@
 package ru.vyarus.dropwizard.guice.debug.yaml
 
-import io.dropwizard.Application
-import io.dropwizard.setup.Bootstrap
-import io.dropwizard.setup.Environment
+import io.dropwizard.core.Application
+import io.dropwizard.core.setup.Bootstrap
+import io.dropwizard.core.setup.Environment
 import ru.vyarus.dropwizard.guice.GuiceBundle
 import ru.vyarus.dropwizard.guice.debug.report.yaml.BindingsConfig
 import ru.vyarus.dropwizard.guice.debug.report.yaml.ConfigBindingsRenderer
@@ -49,7 +49,7 @@ class BindingsReportTest extends Specification {
             @Config TaskConfiguration = TaskConfiguration[printStackTraceOnError=false]
 
         Configuration.logging
-            @Config LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.ConsoleAppenderFactory@1111111]}
+            @Config LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]}
 
         Configuration.metrics
             @Config MetricsFactory = MetricsFactory{frequency=1 minute, reporters=[], reportOnStop=false}
@@ -79,8 +79,8 @@ class BindingsReportTest extends Specification {
             @Config("admin.tasks") TaskConfiguration = TaskConfiguration[printStackTraceOnError=false]
             @Config("admin.tasks.printStackTraceOnError") Boolean = false
             @Config("health") Optional<HealthFactory> = Optional.empty
-            @Config("logging") LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.ConsoleAppenderFactory@1111111]}
-            @Config("logging.appenders") List<AppenderFactory<ILoggingEvent>> (with actual type ArrayList<AppenderFactory<ILoggingEvent>>) = [io.dropwizard.logging.ConsoleAppenderFactory@1111111]
+            @Config("logging") LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]}
+            @Config("logging.appenders") List<AppenderFactory<ILoggingEvent>> (with actual type ArrayList<AppenderFactory<ILoggingEvent>>) = [io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]
             @Config("logging.level") String = "INFO"
             @Config("logging.loggers") Map<String, JsonNode> (with actual type HashMap<String, JsonNode>) = {}
             @Config("metrics") MetricsFactory = MetricsFactory{frequency=1 minute, reporters=[], reportOnStop=false}
@@ -113,7 +113,7 @@ class BindingsReportTest extends Specification {
             @Config("server.minThreads") Integer = 8
             @Config("server.registerDefaultExceptionMappers") Boolean = true
             @Config("server.requestLog") RequestLogFactory<Object> (with actual type LogbackAccessRequestLogFactory) = io.dropwizard.request.logging.LogbackAccessRequestLogFactory@1111111
-            @Config("server.requestLog.appenders") List<AppenderFactory<IAccessEvent>> (with actual type ArrayList<AppenderFactory<IAccessEvent>>) = [io.dropwizard.logging.ConsoleAppenderFactory@1111111]
+            @Config("server.requestLog.appenders") List<AppenderFactory<IAccessEvent>> (with actual type ArrayList<AppenderFactory<IAccessEvent>>) = [io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]
             @Config("server.rootPath") Optional<String> = Optional.empty
             @Config("server.serverPush") ServerPushFilterFactory = io.dropwizard.jetty.ServerPushFilterFactory@1111111
             @Config("server.serverPush.associatePeriod") Duration = 4 seconds
@@ -153,7 +153,7 @@ class BindingsReportTest extends Specification {
     ├── health: Optional<HealthFactory> = Optional.empty
     │
     ├── logging: DefaultLoggingFactory
-    │   ├── appenders: ArrayList<AppenderFactory<ILoggingEvent>> = [io.dropwizard.logging.ConsoleAppenderFactory@1111111]
+    │   ├── appenders: ArrayList<AppenderFactory<ILoggingEvent>> = [io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]
     │   ├── level: String = "INFO"
     │   └── loggers: HashMap<String, JsonNode> = {}
     │
@@ -205,7 +205,7 @@ class BindingsReportTest extends Specification {
         │   └── syncFlush: Boolean = false
         │
         ├── requestLog: LogbackAccessRequestLogFactory
-        │   └── appenders: ArrayList<AppenderFactory<IAccessEvent>> = [io.dropwizard.logging.ConsoleAppenderFactory@1111111]
+        │   └── appenders: ArrayList<AppenderFactory<IAccessEvent>> = [io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]
         │
         └── serverPush: ServerPushFilterFactory
             ├── associatePeriod: Duration = 4 seconds
@@ -235,7 +235,7 @@ class BindingsReportTest extends Specification {
             @Config TaskConfiguration = TaskConfiguration[printStackTraceOnError=false]
 
         Configuration.logging
-            @Config LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.ConsoleAppenderFactory@1111111]}
+            @Config LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]}
 
         Configuration.metrics
             @Config MetricsFactory = MetricsFactory{frequency=1 minute, reporters=[], reportOnStop=false}
@@ -269,8 +269,8 @@ class BindingsReportTest extends Specification {
             @Config("admin.tasks") TaskConfiguration = TaskConfiguration[printStackTraceOnError=false]
             @Config("admin.tasks.printStackTraceOnError") Boolean = false
             @Config("health") Optional<HealthFactory> = Optional.empty
-            @Config("logging") LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.ConsoleAppenderFactory@1111111]}
-            @Config("logging.appenders") List<AppenderFactory<ILoggingEvent>> (with actual type ArrayList<AppenderFactory<ILoggingEvent>>) = [io.dropwizard.logging.ConsoleAppenderFactory@1111111]
+            @Config("logging") LoggingFactory (with actual type DefaultLoggingFactory) = DefaultLoggingFactory{level=INFO, loggers={}, appenders=[io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]}
+            @Config("logging.appenders") List<AppenderFactory<ILoggingEvent>> (with actual type ArrayList<AppenderFactory<ILoggingEvent>>) = [io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]
             @Config("logging.level") String = "INFO"
             @Config("logging.loggers") Map<String, JsonNode> (with actual type HashMap<String, JsonNode>) = {}
             @Config("metrics") MetricsFactory = MetricsFactory{frequency=1 minute, reporters=[], reportOnStop=false}
@@ -312,7 +312,7 @@ class BindingsReportTest extends Specification {
             @Config("server.nofileSoftLimit") Integer = null
             @Config("server.registerDefaultExceptionMappers") Boolean = true
             @Config("server.requestLog") RequestLogFactory<Object> (with actual type LogbackAccessRequestLogFactory) = io.dropwizard.request.logging.LogbackAccessRequestLogFactory@1111111
-            @Config("server.requestLog.appenders") List<AppenderFactory<IAccessEvent>> (with actual type ArrayList<AppenderFactory<IAccessEvent>>) = [io.dropwizard.logging.ConsoleAppenderFactory@1111111]
+            @Config("server.requestLog.appenders") List<AppenderFactory<IAccessEvent>> (with actual type ArrayList<AppenderFactory<IAccessEvent>>) = [io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]
             @Config("server.rootPath") Optional<String> = Optional.empty
             @Config("server.serverPush") ServerPushFilterFactory = io.dropwizard.jetty.ServerPushFilterFactory@1111111
             @Config("server.serverPush.associatePeriod") Duration = 4 seconds
@@ -393,7 +393,7 @@ class BindingsReportTest extends Specification {
     ├── health: Optional<HealthFactory> = Optional.empty
     │
     ├── logging: DefaultLoggingFactory
-    │   ├── appenders: ArrayList<AppenderFactory<ILoggingEvent>> = [io.dropwizard.logging.ConsoleAppenderFactory@1111111]
+    │   ├── appenders: ArrayList<AppenderFactory<ILoggingEvent>> = [io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]
     │   ├── level: String = "INFO"
     │   └── loggers: HashMap<String, JsonNode> = {}
     │
@@ -432,7 +432,7 @@ class BindingsReportTest extends Specification {
         │   └── syncFlush: Boolean = false
         │
         ├── requestLog: LogbackAccessRequestLogFactory
-        │   └── appenders: ArrayList<AppenderFactory<IAccessEvent>> = [io.dropwizard.logging.ConsoleAppenderFactory@1111111]
+        │   └── appenders: ArrayList<AppenderFactory<IAccessEvent>> = [io.dropwizard.logging.common.ConsoleAppenderFactory@1111111]
         │
         └── serverPush: ServerPushFilterFactory
             ├── associatePeriod: Duration = 4 seconds

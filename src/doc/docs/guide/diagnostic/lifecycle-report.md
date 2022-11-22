@@ -42,8 +42,8 @@ __[ 00:00:00.151 ]____________________________________________________/  11 (-1)
                                                                          ────────────────────────────────
 __[ 00:00:00.158 ]____________________________________________________/  14 classpath extensions detected  \____
 
-INFO  [2019-10-13 08:33:33,925] io.dropwizard.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
-INFO  [2019-10-13 08:33:33,926] io.dropwizard.server.DefaultServerFactory: Registering admin handler with root path prefix: /
+INFO  [2019-10-13 08:33:33,925] io.dropwizard.core.server.DefaultServerFactory: Registering jersey handler with root path prefix: /
+INFO  [2019-10-13 08:33:33,926] io.dropwizard.core.server.DefaultServerFactory: Registering admin handler with root path prefix: /
 
 
                                                                          ───────────────────────

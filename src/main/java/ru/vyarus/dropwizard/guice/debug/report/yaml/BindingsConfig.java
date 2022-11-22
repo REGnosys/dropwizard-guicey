@@ -45,7 +45,7 @@ public class BindingsConfig {
     }
 
     /**
-     * Avoid paths from dropwizard {@link io.dropwizard.Configuration} class (only custom configuration paths shown).
+     * Avoid paths from dropwizard {@link io.dropwizard.core.Configuration} class (only custom configuration paths shown).
      *
      * @return config object for chained calls
      */
